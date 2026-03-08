@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOO 课堂反馈工具</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-<div class="no-print" style="margin-top: 20px; text-align: center;">
-    <button onclick="downloadPDF()" style="padding: 10px 20px; background: #1a73e8; color: white; border: none; cursor: pointer; border-radius: 4px;">
-        下载 PDF 报告
-    </button>
-</div>
 </head>
 <body>
     <div class="container" id="capture">
@@ -24,7 +17,7 @@
             <tr>
                 <td>
                     <label>学生姓名 Student:</label>
-                    <select id="studentSelect" onchange="updateStudentInfo()"></select>
+                    <select id="studentSelect"></select>
                 </td>
                 <td>
                     <label>专业 Major:</label>
@@ -52,7 +45,7 @@
             <tr>
                 <td colspan="3">
                     <label>上课内容 Course Content:</label>
-                    <textarea rows="4"></textarea>
+                    <textarea rows="5"></textarea>
                 </td>
             </tr>
             <tr>
@@ -77,35 +70,10 @@
             <tr>
                 <td colspan="3">
                     <label>课后作业 Homework:</label>
-                    <textarea rows="3"></textarea>
+                    <textarea rows="4"></textarea>
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
-                    <label>整体项目进度:</label>
-                    <select>
-                        <option>100%</option>
-                        <option>75%</option>
-                        <option>50%</option>
-                        <option>25%</option>
-                    </select>
-                </td>
-                <td>
-                    <label>下次上课时间 Next Lesson:</label>
-                    <input type="date">
-                </td>
-            </tr>
-        </table>
-        
-        <div class="no-print">
-            <button onclick="window.print()">导出为 PDF</button>
-        </div>
-    </div>
-
-    <script src="config.js"></script>
-    <script src="script.js"></script>
-</body>
-<tr>
                 <td>
                     <label>整体项目进度:</label>
                     <select>
@@ -126,8 +94,8 @@
             </tr>
         </table>
         
-        <div class="no-print" style="margin-top: 20px; text-align: center;">
-            <button onclick="window.print()" style="padding: 10px 20px; background: #1a73e8; color: white; border: none; cursor: pointer; border-radius: 4px;">打印 / 导出为 PDF</button>
+        <div class="no-print" style="margin-top: 30px; text-align: center;">
+            <button onclick="window.print()" class="btn-primary">打印 / 导出为 PDF</button>
         </div>
     </div>
 
