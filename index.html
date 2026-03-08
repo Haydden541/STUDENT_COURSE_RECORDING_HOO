@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOO 课堂反馈工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="capture">
+        <h1 class="title">HOO 课堂反馈</h1>
+        
+        <table class="feedback-table">
+            <tr>
+                <td colspan="3" class="table-header">COURSE RECORDING 课堂记录表</td>
+            </tr>
+            <tr>
+                <td>
+                    <label>学生姓名 Student:</label>
+                    <select id="studentSelect" onchange="updateStudentInfo()"></select>
+                </td>
+                <td>
+                    <label>专业 Major:</label>
+                    <input type="text" id="majorInput">
+                </td>
+                <td>
+                    <label>国家 Country:</label>
+                    <input type="text" id="countryInput">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>日期 Date:</label>
+                    <input type="date" id="currentDate">
+                </td>
+                <td>
+                    <label>上课时间 Check in:</label>
+                    <input type="time" value="09:00">
+                </td>
+                <td>
+                    <label>下课时间 Check out:</label>
+                    <input type="time" value="10:00">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label>上课内容 Course Content:</label>
+                    <textarea rows="4"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label>作业完成情况 (百分比):</label>
+                    <select>
+                        <option>100%</option>
+                        <option>80%</option>
+                        <option>60%</option>
+                        <option>未完成</option>
+                    </select>
+                </td>
+                <td>
+                    <label>作业质量情况 (评价):</label>
+                    <select>
+                        <option>非常好</option>
+                        <option>良好</option>
+                        <option>需改进</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label>课后作业 Homework:</label>
+                    <textarea rows="3"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label>整体项目进度:</label>
+                    <select>
+                        <option>100%</option>
+                        <option>75%</option>
+                        <option>50%</option>
+                        <option>25%</option>
+                    </select>
+                </td>
+                <td>
+                    <label>下次上课时间 Next Lesson:</label>
+                    <input type="date">
+                </td>
+            </tr>
+        </table>
+        
+        <div class="no-print">
+            <button onclick="window.print()">导出为 PDF / 打印</button>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
