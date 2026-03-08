@@ -105,4 +105,33 @@
     <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
+<tr>
+                <td>
+                    <label>整体项目进度:</label>
+                    <select>
+                        <option>100%</option>
+                        <option>75%</option>
+                        <option>50%</option>
+                        <option>25%</option>
+                    </select>
+                </td>
+                <td>
+                    <label>下次上课时间 Next Lesson:</label>
+                    <input type="date">
+                </td>
+                <td>
+                    <label>授课老师 Teacher:</label>
+                    <input type="text" id="teacherInput">
+                </td>
+            </tr>
+        </table>
+        
+        <div class="no-print" style="margin-top: 20px; text-align: center;">
+            <button onclick="window.print()" style="padding: 10px 20px; background: #1a73e8; color: white; border: none; cursor: pointer; border-radius: 4px;">打印 / 导出为 PDF</button>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
