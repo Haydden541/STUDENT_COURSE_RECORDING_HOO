@@ -18,12 +18,32 @@ body {
 }
 
 /* 标题样式 */
+/*
 .title {
     text-align: center;
     color: #1a73e8;
     font-size: 28px;
     margin-bottom: 30px;
-    font-weight: bold;
+}
+*/
+
+/* --- 2. 添加新的 Logo 容器样式，实现左对齐 --- */
+.logo-container {
+    text-align: left;       /* 强制内容左对齐 */
+    padding-left: 10px;      /* 可选：增加一点左边距，不紧贴边框 */
+    margin-bottom: 25px;     /* 保留原本文字下方与表格的距离 */
+}
+
+/* --- 3. 添加新的 Logo 图片样式，控制大小 --- */
+.logo-img {
+    /* 这里的高度设置是关键 */
+    /* 原文字 HOO 是 h1，通常在 28px-32px 左右。 */
+    /* 为了“比文字大一点”，我们将高度设为 40px - 50px 之间，你可以根据图片实际效果微调 */
+    height: 45px;            
+    
+    width: auto;             /* 宽度自动，保持图片比例 */
+    display: inline-block;  /* 确保它在文本流中正确对齐 */
+    vertical-align: middle; /* 如果旁边有文字，可以垂直居中对齐 */
 }
 
 /* 表格基础样式 */
