@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOO 课堂反馈工具</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
     <div class="container" id="capture">
@@ -53,16 +54,9 @@
                     <label>作业完成情况 (百分比):</label>
                     <select>
                         <option>100%</option>
-                         <option>90%</option>
-                         <option>80%</option>
-                        <option>70%</option>
+                        <option>80%</option>
                         <option>60%</option>
-                         <option>50%</option>
-                         <option>40%</option>
-                         <option>30%</option>
-                         <option>20%</option>
-                         <option>10%</option>     
-                        <option>开题</option>
+                        <option>未完成</option>
                     </select>
                 </td>
                 <td>
@@ -71,7 +65,6 @@
                         <option>非常好</option>
                         <option>良好</option>
                         <option>需改进</option>
-                        <option> 叫你家长来 </option>
                     </select>
                 </td>
             </tr>
@@ -85,17 +78,10 @@
                 <td>
                     <label>整体项目进度:</label>
                     <select>
-                             <option>100%</option>
-                         <option>90%</option>
-                         <option>80%</option>
-                        <option>70%</option>
-                        <option>60%</option>
-                         <option>50%</option>
-                         <option>40%</option>
-                         <option>30%</option>
-                         <option>20%</option>
-                         <option>10%</option>     
-                        <option>开题</option>
+                        <option>100%</option>
+                        <option>75%</option>
+                        <option>50%</option>
+                        <option>25%</option>
                     </select>
                 </td>
                 <td>
@@ -110,8 +96,9 @@
         </table>
         
         <div class="no-print" style="margin-top: 30px; text-align: center;">
-            <button class="no-print-btn" onclick="exportFeedback()">💾 导出 PDF 反馈单</button>
-            
+            <button class="no-print-btn" onclick="exportFeedback()" style="padding: 12px 25px; background: #1a73e8; color: white; border: none; cursor: pointer; border-radius: 4px; font-size: 16px;">
+                💾 导出 PDF 反馈单
+            </button>
         </div>
     </div>
 
