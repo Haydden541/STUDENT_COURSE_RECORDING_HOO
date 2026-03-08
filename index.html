@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOO 课堂反馈工具</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<div class="no-print" style="margin-top: 20px; text-align: center;">
+    <button onclick="downloadPDF()" style="padding: 10px 20px; background: #1a73e8; color: white; border: none; cursor: pointer; border-radius: 4px;">
+        下载 PDF 报告
+    </button>
+</div>
 </head>
 <body>
     <div class="container" id="capture">
@@ -91,7 +98,7 @@
         </table>
         
         <div class="no-print">
-            <button onclick="window.print()">导出为 PDF / 打印</button>
+            <button onclick="window.print()">导出为 PDF</button>
         </div>
     </div>
 
