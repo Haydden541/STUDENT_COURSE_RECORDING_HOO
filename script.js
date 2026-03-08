@@ -1,5 +1,5 @@
 /**
- * HOO 课堂反馈工具 - 逻辑处理
+ * HOO 课堂反馈工具 - 核心逻辑
  */
 
 const studentSelect = document.getElementById('studentSelect');
@@ -9,7 +9,7 @@ const teacherInput = document.getElementById('teacherInput');
 const currentDateInput = document.getElementById('currentDate');
 
 function init() {
-    // 1. 填充学生下拉菜单
+    // 1. 初始化学生下拉列表
     studentSelect.innerHTML = '';
     studentData.forEach((student, index) => {
         let option = document.createElement('option');
@@ -18,16 +18,16 @@ function init() {
         studentSelect.appendChild(option);
     });
     
-    // 2. 填充老师姓名 (从 config.js 读取)
+    // 2. 自动填充老师姓名
     if (typeof teacherName !== 'undefined') {
         teacherInput.value = teacherName;
     }
 
-    // 3. 设置默认日期为当天
+    // 3. 默认日期设为今天
     const today = new Date().toISOString().split('T')[0];
     currentDateInput.value = today;
 
-    // 4. 初始加载第一个学生信息
+    // 4. 加载首位学生资料
     updateStudentInfo();
 }
 
@@ -39,7 +39,8 @@ function updateStudentInfo() {
     }
 }
 
-// 绑定事件
+// 事件监听
 studentSelect.addEventListener('change', updateStudentInfo);
 
+// 启动
 window.onload = init;
