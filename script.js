@@ -9,26 +9,42 @@ const teacherInput = document.getElementById('teacherInput');
 const currentDateInput = document.getElementById('currentDate');
 
 function init() {
-    // 1. 初始化学生下拉列表
-    studentSelect.innerHTML = '';
-    studentData.forEach((student, index) => {
-        let option = document.createElement('option');
-        option.value = index;
-        option.text = student.name;
-        studentSelect.appendChild(option);
-    });
-    
-    // 2. 自动填充老师姓名
+    // 1. 初始化数据
+    if (typeof studentData !== 'undefined') {
+        studentSelect.innerHTML = '';
+        studentData.forEach((student, index) => {
+            let option = document.createElement('option');
+            option.value = index;
+            option.text = student.name;
+            studentSelect.appendChild(option);
+        });
+    }
     if (typeof teacherName !== 'undefined') {
         teacherInput.value = teacherName;
     }
+    document.getElementById('currentDate').value = new Date().toISOString().split('T')[0];
 
-    // 3. 默认日期设为今天
-    const today = new Date().toISOString().split('T')[0];
-    currentDateInput.value = today;
+    // 2. 绑定同步更新逻辑
+    syncTextareaToDiv('courseContent');
+    syncTextareaToDiv('homework');
 
-    // 4. 加载首位学生资料
     updateStudentInfo();
+}
+
+/**
+ * 核心逻辑：将文本框内容实时同步到打印专用的 div 中
+ */
+function syncTextareaToDiv(id) {
+    const area = document.getElementById(id);
+    const printDiv = document.getElementById(id + '_print');
+    
+    area.addEventListener('input', function() {
+        printDiv.innerText = this.value; // 同步文字内容
+        
+        // 同时也尝试自动调整高度（为了填写时好看）
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    });
 }
 
 function updateStudentInfo() {
@@ -39,8 +55,5 @@ function updateStudentInfo() {
     }
 }
 
-// 事件监听
 studentSelect.addEventListener('change', updateStudentInfo);
-
-// 启动
 window.onload = init;
